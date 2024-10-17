@@ -22,7 +22,7 @@ var checkRateLimit = require('./lib/rate-limit')(process.env.CORSANYWHERE_RATELI
 var cors_proxy = require('./lib/cors-anywhere');
 cors_proxy.createServer({
   originBlacklist: originBlacklist,
-  originWhitelist: originWhitelist,
+  originWhitelist: [],
   requireHeader: ['origin', 'x-requested-with'],
   checkRateLimit: checkRateLimit,
   removeHeaders: [
@@ -47,7 +47,7 @@ cors_proxy.createServer({
    // Add custom handling for response headers
   handleInitialRequest: function (req, res) {
     // Set a fixed cookie for the response
-    res.setHeader('Set-Cookie', 'PHPSESSID=9urmp4rcoapso681o3pf1n8hp4; Path=/; HttpOnly');
+    res.setHeader('Set-Cookie', 'PHPSESSID=9urmp4rcoapso681o3pf1n8hp4; Path=/; Domain=hanam.edu.vn;');
   },
   
   // Optionally remove other headers if needed
