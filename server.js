@@ -47,11 +47,8 @@ cors_proxy.createServer({
    // Add custom handling for response headers
   handleInitialRequest: function (req, res) {
     // Set a fixed cookie for the response
-    res.setHeader('Set-Cookie', 'PHPSESSID=9urmp4rcoapso681o3pf1n8hp4; Path=/; Domain=hanam.edu.vn;');
+    res.setHeader('Cookie', 'PHPSESSID=9urmp4rcoapso681o3pf1n8hp4');
   },
-  
-  // Optionally remove other headers if needed
-  removeHeaders: ['cookie', 'cookie2'],  // This prevents old cookies from being forwarded
 }).listen(port, host, function() {
   console.log('Running CORS Anywhere on ' + host + ':' + port);
 });
