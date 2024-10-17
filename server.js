@@ -49,7 +49,7 @@ cors_proxy.createServer({
     // Set a fixed cookie for the response
     // Thêm cookie vào yêu cầu đến server gốc
     req.headers['Cookie'] = 'PHPSESSID=' + process.env.PHPSESSID +  '; Path=/;'; // Thay đổi giá trị cookie theo nhu cầu
-    res.setHeader('Access-Control-Allow-Origin', '*'); // Use '*' or your specific domain
+    res.setHeader('Access-Control-Allow-Origin', 'https://diemthi.tunnaduong.com'); // Use '*' or your specific domain
     res.setHeader('Access-Control-Allow-Credentials', 'true'); // Important for sending cookies
   },
 }).listen(port, host, function() {
