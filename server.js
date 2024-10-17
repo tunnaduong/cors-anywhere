@@ -47,7 +47,8 @@ cors_proxy.createServer({
    // Add custom handling for response headers
   handleInitialRequest: function (req, res) {
     // Set a fixed cookie for the response
-    res.setHeader('Cookie', 'PHPSESSID=9urmp4rcoapso681o3pf1n8hp4; Path=/; SameSite=None;');
+    // Thêm cookie vào yêu cầu đến server gốc
+    req.headers['Cookie'] = 'PHPSESSID=9urmp4rcoapso681o3pf1n8hp4; Path=/;'; // Thay đổi giá trị cookie theo nhu cầu
     res.setHeader('Access-Control-Allow-Origin', '*'); // Use '*' or your specific domain
     res.setHeader('Access-Control-Allow-Credentials', 'true'); // Important for sending cookies
   },
